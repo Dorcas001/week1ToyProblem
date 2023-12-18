@@ -9,14 +9,14 @@ const prompt = require('prompt-sync')();
 const marks = parseInt(prompt('Enter student marks between 0 and 100  :  '));
 
 function studentMarks(){
-    // if you input more than 100 || less than o it shoul output invalid number
+    // if the input is more than 100 || less than 0 it output's invalid number
     if (isNaN(marks) || marks < 0 || marks > 100) {
         console.log('Please enter a valid Number between 0 && 100')
         return;
     }
     
     let grade;
-   
+//    determine grade based on the marks
     if (marks > 79){
         grade = 'A' ;
     }else if( marks > 60 ){
@@ -28,6 +28,8 @@ function studentMarks(){
     }else{
         grade = 'E';
     }
+    // console.log to get the student grade
+
     console.log(`The student has got ${grade}`)
 }
 // invoking studentmarks
