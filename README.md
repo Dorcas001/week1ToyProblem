@@ -26,5 +26,10 @@ open and run the problem on the terminal.
 ## Technologies
 JavaScript
 
+## Contact Information
+Email : karimidorcas1@gmail.com
+Phone : 0701117975
+
+
 ## License
 [MIT License](LICENSE)
