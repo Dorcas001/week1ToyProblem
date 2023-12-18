@@ -1,11 +1,11 @@
 const prompt = require('prompt-sync')();
 
-let basicSalary= parseFloat(prompt('Enter basic salary :'));
+let basicSalary= prompt('Enter basic salary :');
 // let allowances= parseFloat(prompt('Enter allowances:'));
 // nhif and nssf taxpay depends on an individual salary
 
-let nhifTaxRate = parseFloat(prompt('Enter NHIF tax rate :'))
-let nssfTaxRate = parseFloat(prompt('Enter NSSF tax rate :'))
+let nhifTaxRate = prompt('Enter NHIF tax rate :')
+let nssfTaxRate = prompt('Enter NSSF tax rate :')
 
 function netSalary( allowances, taxRate){
 
@@ -17,24 +17,24 @@ function netSalary( allowances, taxRate){
     // first calculate  gross pay
     // taxrate depends on the indivdual basic salary
     // 
-    let grossPay = taxableIncome * taxRate/100;
+    let grossPay = (taxableIncome * taxRate)/100;
 
-    // calculate nhif deductions
-    let nhifDeduction = basicSalary * nhifTaxRate/100;
-    // calculate nssf deductions
-    let nssfDeduction = basicSalary * nssfTaxRate/100;
+    // // calculate nhif deductions
+    // let nhifDeduction = basicSalary * nhifTaxRate/100;
+    // // calculate nssf deductions
+    // let nssfDeduction = basicSalary * nssfTaxRate/100;
     // calculate netsalary
 
 
-    const deductions = nhifDeduction + nssfDeduction;
+    let deductions = nhifTaxRate + nssfTaxRate;
 
     const salary= grossPay - deductions;
    
 
     console.log(`gross pay is ${grossPay}`);
-    console.log(`nhif deductions is ${nhifDeduction}`);
-    console.log(`nssf deductions is ${nssfDeduction}`);
+    // console.log(`nhif deductions is ${nhifDeduction}`);
+    // console.log(`nssf deductions is ${nssfDeduction}`);
     console.log(`net salary is ${salary}`);
 
 }
-netSalary(1000, 25) 
+netSalary(3000, 10) 
